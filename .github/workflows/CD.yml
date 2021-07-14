@@ -35,7 +35,8 @@ jobs:
           REPO="https://${GIT_USER}:${GIT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           
 
-          git clone $REPO opt -b docs
+          git clone $REPO opt
+          git checkout -b docs --track origin/main
           
           rsync -vaI .all-contributorsrc  docs/
           rsync -vaI LICENSE docs/
