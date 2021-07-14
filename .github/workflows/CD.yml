@@ -23,7 +23,7 @@ jobs:
         run: |
           REPO="https://${GIT_USER}:${GIT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           
-          git checkout -b docs docs --track origin/main
+          git checkout -b docs docs
           
           rsync -vaI .all-contributorsrc  docs/
           rsync -vaI LICENSE docs/
