@@ -37,8 +37,11 @@ jobs:
 
           git clone $REPO opt
           git checkout -b docs --track origin/main
+
+          rm -rfv out/assets/*
+          rm -rfv out/interfaces/*
+          rm -rfv out/*.html
           
-          rsync -vaI .all-contributorsrc  docs/
           rsync -vaI LICENSE docs/
           rsync -vaI README.md docs/
           rsync -vaI docs/ docs/
