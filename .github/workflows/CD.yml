@@ -36,6 +36,7 @@ jobs:
           
 
           git clone $REPO opt
+          cd opt
           git checkout -b docs --track origin/main
 
           rm -rfv out/assets/*
