@@ -36,7 +36,6 @@ jobs:
           
 
           git clone $REPO opt
-          cd opt
           git checkout -b docs --track origin/main
 
           rm -rfv out/assets/*
@@ -47,6 +46,7 @@ jobs:
           rsync -vaI README.md docs/
           rsync -vaI docs/ docs/
           
+          cd opt
           git add --all .
           
           git config --global user.name "${GIT_USER}"
