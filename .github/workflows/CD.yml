@@ -20,7 +20,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
       - name: Setup node
-        uses: actions/node-setup@v2
+        uses: actions/setup-node@v2
         with:
           node-version: 16
       - name: install
@@ -30,7 +30,7 @@ jobs:
       
       # Runs a set of commands using the runners shell
       - name: Generate docs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           REPO="https://${GIT_USER}:${GIT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           
