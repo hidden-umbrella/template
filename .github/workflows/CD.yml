@@ -41,15 +41,15 @@ jobs:
           rm -rfv out/assets/*
           rm -rfv out/interfaces/*
           rm -rfv out/*.html
-          
+
           rsync -vaI LICENSE docs/
           rsync -vaI README.md docs/
           rsync -vaI docs/ docs/
           
           git add .
           
-          git config user.name "${GITHUB_USER}"
-          git config user.email "${GITHUB_EMAIL}"
+          git config --global user.name "${GITHUB_USER}"
+          git config --global user.email "${GITHUB_EMAIL}"
           
           git commit -m "docs: Generated for ${GITHUB_SHA}"
           git push origin docs
