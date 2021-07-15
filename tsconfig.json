@@ -1,11 +1,10 @@
 {
 	"compilerOptions": {
-		"outDir": "dist",
+		"outDir": "./dist",
 		"allowJs": false,
 		"declaration": true,
-		"declarationDir": "./dist",
 		"emitDeclarationOnly": true,
-		"baseUrl": "./",
+		"baseUrl": "src",
 		"target": "ESNext",
 		"lib": ["ESNext"],
 		"removeComments": true,
@@ -16,7 +15,7 @@
 		"allowSyntheticDefaultImports": true,
 		"skipLibCheck": true
 	},
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules", "tests", "jest.*"],
 	"include": ["**/*"],
 	"files": ["tests/global.d.ts"]
 }
