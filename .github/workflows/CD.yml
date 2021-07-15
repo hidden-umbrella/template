@@ -19,6 +19,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
+      - name: Install
+        run: yarn
+      - name: Build
+        run: yarn build
+      - name: "Push to NPM Registry"
+        run: |
+          npm publish --dry-run
       
   docs:
     # The type of runner that the job will run on
