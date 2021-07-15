@@ -51,7 +51,7 @@ jobs:
           git config --global user.email "${GIT_EMAIL}"
           
           git commit -m "docs: Generated for ${GITHUB_SHA}"
-          git push origin docs
+          git push docs
         env:
           GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
           GIT_USER: ${{ secrets.GIT_USER }}
