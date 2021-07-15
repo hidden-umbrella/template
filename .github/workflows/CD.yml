@@ -43,7 +43,9 @@ jobs:
           rsync -vaI README.md doc/
           rsync -vaI docs/ doc/
 
-          git add --all docs/*
+          cd doc
+
+          git add --all .
           
           git config --global user.name "${GIT_USER}"
           git config --global user.email "${GIT_EMAIL}"
