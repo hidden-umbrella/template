@@ -32,7 +32,6 @@ jobs:
           
 
           git clone $REPO opt
-          cd opt
           git checkout -b docs
 
           yarn doc:gen
