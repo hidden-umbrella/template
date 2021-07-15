@@ -33,7 +33,7 @@ jobs:
           REPO="https://${GIT_USER}:${GIT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           
 
-          git clone $REPO doc -b docs -o main
+          git clone $REPO doc -b docs
 
           rm -rfv doc/assets/*
           rm -rfv doc/interfaces/*
