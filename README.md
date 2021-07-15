@@ -13,6 +13,12 @@
 
 ## Features
 
+- Literally
+- Nothing
+- Much
+- Right
+- Now
+
 ## Docs
 
 Auto-generated from TypeDoc [documentation](https://hidden-umbrella.github.io/template/)
