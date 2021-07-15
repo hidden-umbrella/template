@@ -36,15 +36,8 @@ jobs:
 
           yarn doc:gen
 
-          rm -rfv out/assets/*
-          rm -rfv out/interfaces/*
-          rm -rfv out/*.html
+          cd docs
 
-          rsync -vaI LICENSE docs/
-          rsync -vaI README.md docs/
-          rsync -vaI docs/ docs/
-          
-          cd opt
           git add .
           
           git config --global user.name "${GIT_USER}"
