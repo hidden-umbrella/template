@@ -12,7 +12,8 @@
 		"strictNullChecks": true,
 		"composite": true,
 		"moduleResolution": "node",
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"skipLibCheck": true
 	},
 	"exclude": ["node_modules"],
 	"include": ["**/*"],
