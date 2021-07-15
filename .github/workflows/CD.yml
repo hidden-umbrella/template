@@ -44,7 +44,7 @@ jobs:
           rsync -vaI README.md docs/
           rsync -vaI docs/ docs/
           
-          cd out
+          cd opt
           cd docs
           git add .
           
