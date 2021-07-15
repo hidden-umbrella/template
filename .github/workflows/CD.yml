@@ -25,18 +25,23 @@ jobs:
           node-version: 16
       - name: Install
         run: yarn
+      - name: Build Docs
+        run: yarn doc:gen
       - name: Generate docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           REPO="https://${GIT_USER}:${GIT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           
 
-          git clone $REPO opt
-          git checkout -b docs
+          git clone $REPO opt -b doc
 
-          yarn doc:gen
+          rm -rfv doc/assets/*
+          rm -rfv doc/interfaces/*
+          rm -rfv doc/*.html
 
-          cd docs
+          rsync -vaI LICENSE doc/
+          rsync -vaI README.md doc/
+          rsync -vaI docs/ doc/
 
           git add --all docs/*
           
