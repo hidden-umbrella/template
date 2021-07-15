@@ -1,4 +1,4 @@
-name: CI
+name: CD
 
 # Controls when the workflow will run
 on:
@@ -10,13 +10,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      
   docs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout branch
         uses: actions/checkout@v2
       - name: Setup node
@@ -25,9 +33,20 @@ jobs:
           node-version: 16
       - name: Install
         run: yarn
+      - name: Cache Dependencies
+        uses: actions/cache@v2.1.6
+        id: cache
+        with:
+          # A list of files, directories, and wildcard patterns to cache and restore
+          path: node_modules
+          # An explicit key for restoring and saving the cache
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+      - name: Install Dependencies if Cache Miss
+        if: ${{ !steps.cache.outputs.cache-hit }}
+        run: yarn --frozen-lockfile
       - name: Build Docs
         run: yarn doc:gen
-      - name: Generate docs
+      - name: Push docs
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           REPO="https://${GIT_USER}:${GIT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
