@@ -1,11 +1,11 @@
 {
   "name": "kasa",
   "version": "0.0.0",
-  "main": "dist/index",
+  "main": "dist/src/index",
   "author": "ArtieFuzzz#8298",
   "license": "MIT",
   "private": false,
-  "typings": "./src/index.d.ts",
+  "typings": "./dist/src/index.d.ts",
   "scripts": {
     "lint": "eslint src --ext ts",
     "lint:fix": "eslint src --ext ts --fix",
