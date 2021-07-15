@@ -21,11 +21,22 @@ jobs:
           node-version: 16
       - name: Install
         run: yarn
+      - name: Cache Dependencies
+        uses: actions/cache@v2.1.6
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-16-${{ hashFiles('**/lockfiles') }}
+      - name: Install Dependencies if Cache Miss
+        if: ${{ !steps.cache.outputs.cache-hit }}
+        run: yarn --frozen-lockfile
       - name: Build
         run: yarn build
       - name: "Push to NPM Registry"
         run: |
           npm publish --dry-run
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       
   docs:
     # The type of runner that the job will run on
@@ -44,10 +55,8 @@ jobs:
         uses: actions/cache@v2.1.6
         id: cache
         with:
-          # A list of files, directories, and wildcard patterns to cache and restore
           path: node_modules
-          # An explicit key for restoring and saving the cache
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.os }}-16-${{ hashFiles('**/lockfiles') }}
       - name: Install Dependencies if Cache Miss
         if: ${{ !steps.cache.outputs.cache-hit }}
         run: yarn --frozen-lockfile
