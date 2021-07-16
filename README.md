@@ -2,11 +2,11 @@
 
 # Kasa
 
-[![CD](https://github.com/hidden-umbrella/kasa/actions/workflows/CD.yml/badge.svg)](https://github.com/hidden-umbrella/sayua/actions/workflows/CD.yml)
+[![CD](https://github.com/hidden-umbrella/template/actions/workflows/CD.yml/badge.svg)](https://github.com/hidden-umbrella/sayua/actions/workflows/CD.yml)
 
-![Depfu](https://img.shields.io/depfu/hidden-umbrella/kasa)
-![GitHub issues](https://img.shields.io/github/issues-raw/hidden-umbrella/kasa)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/hidden-umbrella/kasa)
+![Depfu](https://img.shields.io/depfu/hidden-umbrella/template)
+![GitHub issues](https://img.shields.io/github/issues-raw/hidden-umbrella/template)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/hidden-umbrella/template)
 
 </div>
 
