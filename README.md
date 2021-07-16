@@ -1,4 +1,14 @@
+<div align="center">
+
 # Kasa
+
+[![CD](https://github.com/hidden-umbrella/kasa/actions/workflows/CD.yml/badge.svg)](https://github.com/hidden-umbrella/sayua/actions/workflows/CD.yml)
+
+![Depfu](https://img.shields.io/depfu/hidden-umbrella/kasa)
+![GitHub issues](https://img.shields.io/github/issues-raw/hidden-umbrella/kasa)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/hidden-umbrella/kasa)
+
+</div>
 
 ## Template
 
