@@ -1,6 +1,3 @@
-let arrow = (): string => {
-	let str = 'How did this not the first time?'
-	return str
-}
+import arrow from './lib/arrow'
 
-export default arrow
+export { arrow }
