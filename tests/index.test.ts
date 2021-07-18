@@ -1,4 +1,4 @@
-import index from '../src/index'
+import { arrow as index } from '../src/index'
 
 describe('Testing index function', () => {
 	test('CERTAINLY should pass', () => {
