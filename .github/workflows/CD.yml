@@ -61,7 +61,7 @@ jobs:
         run: |
          TAG=$([[ ${{ github.event_name }} == 'push' ]] && echo 'next' || echo 'pr-${{ github.event.inputs.prNumber }}')
 
-         yarn standard-version --skip.commit --skip.tag --prerelease "${TAG}.$(git rev-parse --verify --short HEAD)"
+         yarn standard-version --skip.commit --skip.tag --skip.changelog --prerelease "${TAG}.$(git rev-parse --verify --short HEAD)"
 
          npm publish --tag ${TAG} --dry-run
         env:
