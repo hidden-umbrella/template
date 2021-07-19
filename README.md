@@ -12,10 +12,10 @@
 
 ## Template
 
-- Replace words that are "Kasa" or "Template" with whatever the project name is.
+- Replace words that have "Template" with whatever the project name is.
 - Always make sure the primary branch name is "main".
 - Branch protections should be on for the main branch.
-- Enable Pages (If disabled)
+- Enable Pages
 - Remove the "--dry-run" from CD.yml in .github workflows (Enables npm publishing)
 - Don't forget to remove this part too!
 
